@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Logi Truck | Welcome</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Emergency.css' %}">
+
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+
+            <div id="branding">
+                        {% load static %}
+                        <img src="{% static 'images/LogiTruck.jpg' %}"  style="width:160px;height:80px;">
+                    </div>
+
+            <label for="show-menu" class="show-menu"><img src="{% static 'images/Hamburger_icon.png' %}"  style="width:40px;height:40px;"></label>
+            <input type="checkbox" id="show-menu" role="button">
+            <div class="menu-toggle"></div>
+            <ul id="menu">
+            <nav class="nav_bar">
+
+                    <li id="nav_links">
+                        <div class="topnav" id="myTopnav">
+                            <li ><a href="{% url 'index' %}">Home</a></li>
+                            <li ><a href="{% url 'index' %}">About</a></li>
+                            <li ><a href="{% url 'index' %}">Jobs</a></li>
+                            <li ><a href="{% url 'index' %}">Review</a></li>
+                            <li ><a href="{% url 'index' %}">Emergency</a></li>
+                            <li ><a href="{% url 'index' %}">Contacts</a></li>
+
+                    </li>
+
+            </nav>
+
+            <div class="clearfix"></div>
+                </ul>
+        </div>
+    </header>
+
+
+
+<body>
+
+
+
+
+
+    <style>
+
+                /*Strip the ul of padding and list styling*/
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            position: absolute;
+        }
+        /*Create a horizontal list with spacing*/
+        li {
+            display:inline-block;
+            float: left;
+            margin-right: 1px;
+        }
+        /*Style for menu links*/
+        li a {
+            display:block;
+            min-width:80px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #fff;
+            background: #ffffff;
+            text-decoration: none;
+        }
+        /*Hover state for top level links*/
+        li:hover a {
+            background: #ddd;
+        }
+        /*Style for dropdown links*/
+        li:hover ul a {
+            background: #f3f3f3;
+            color: #2f3036;
+            height: 20px;
+            line-height: 20px;
+        }
+        /*Hover state for dropdown links*/
+        li:hover ul a:hover {
+            background: #ddd;
+            color: #fff;
+        }
+        /*Hide dropdown links until they are needed*/
+        li ul {
+            display: none;
+        }
+        /*Make dropdown links vertical*/
+        li ul li {
+            display: block;
+            float: none;
+        }
+        /*Prevent text wrapping*/
+        li ul li a {
+            width: auto;
+            min-width: 100px;
+            padding: 0 20px;
+        }
+
+        /*Display the dropdown on hover*/
+        ul li a:hover + .hidden, .hidden:hover {
+            display: block;
+        }
+        /*Style 'show menu' label button and hide it by default*/
+        .show-menu {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            color: #fff;
+
+            text-align: center;
+            padding: 10px 0;
+            display: none;
+        }
+        /*Hide checkbox*/
+        input[type=checkbox]{
+            display: none;
+        }
+        /*Show menu when invisible checkbox is checked*/
+        input[type=checkbox]:checked ~ #menu{
+            display: block;
+        }
+
+
+
+        /*Desktop view*/
+        @media (max-width: 1199px ){
+
+            body #bank_details{
+                padding: 1000px 0 0 0;
+            }
+
+           /*Make dropdown links appear inline*/
+            ul {
+                position: static;
+                display: none;
+            }
+            /*Create vertical spacing*/
+            li {
+                margin-bottom: 1px;
+            }
+            /*Make all menu links full width*/
+            ul li, li a {
+                width: 98%;
+            }
+            /*Display 'show menu' link*/
+            .show-menu {
+                display:block;
+                width: 10%;
+                float: right;
+            }
+
+            body{
+                margin:0;
+            }
+        }
+
+        /*Desktop view*/
+        @media (min-width: 1200px ) {
+
+
+
+        #branding{
+            cursor: pointer;
+        }
+
+        #branding img:hover{
+            transparent:50%;
+        }
+
+        /*Body code*/
+        body{
+            padding:0;
+            margin:0;
+            font-family: Arial, Helvetica, san-serif;
+            font-size:15px;
+            line-height:1.5;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            overflow:hidden;
+        }
+
+
+
+
+        /*Header content*/
+        header{
+            background:#ffffff;
+            min-height:70px;
+            display:inline;
+        }
+
+
+        header #branding{
+            float:left;
+            padding: 0 0 0 50px;
+        }
+
+
+        header{
+            box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+        }
+
+        header a{
+            color:#000000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size:14px;
+        }
+
+        header li{
+            list-style-type: none;
+            margin-top:30px;
+        }
+
+        #myTopnav{
+            padding: 0 0 0 300px;
+        }
+
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+          float: right;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        /* Add an active class to highlight the current page */
+        .active {
+          background-color: #4CAF50;
+          color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+          display: none;
+        }
+
+        /* Dropdown container - needed to position the dropdown content */
+        .dropdown {
+          float: left;
+          overflow: hidden;
+        }
+
+        /* Style the dropdown button to fit inside the topnav */
+        .dropdown .dropbtn {
+          font-size: 17px;
+          border: none;
+          outline: none;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+        }
+
+        /* Style the dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        /* Add a dark background on topnav links and the dropdown button on hover */
+        .topnav a:hover, .dropdown:hover .dropbtn {
+          background-color: #555;
+          color: white;
+        }
+
+        /* Add a grey background to dropdown links on hover */
+        .dropdown-content a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+        .dropdown:hover .dropdown-content {
+          display: block;
+          margin-top:80px;
+        }
+
+
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+          .topnav.responsive .dropdown {float: none;}
+          .topnav.responsive .dropdown-content {position: relative;}
+          .topnav.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+          }
+        }
+
+
+
+
+        header .current a{
+            background-color: #e8491d;
+            color: white;
+            font-weight:bold;
+        }
+
+        header a:hover{
+            background-color: #555;
+            color: white;
+        }
+
+        header li a {
+          display: block;
+          color: #000;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        header li{
+            float: left;
+        }
+
+        header .red{
+            background-color: #F00;
+        }
+
+        .clearfix{
+            clear:both;
+        }
+
+
+
+
+
+
+        {
+          box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        .column {
+          float: left;
+          width: 31%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        }
+
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+          padding: 0 16px;
+        }
+
+        .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        .title {
+          color: grey;
+        }
+
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        .button:hover {
+          background-color: #555;
+        }
+
+
+
+
+
+
+
+
+
+
+        /*The footer content*/
+        /*The footer content*/
+        footer{
+            color: #ffffff;
+            background-color: #e8491d;
+            overflow:hidden;
+        }
+
+        .base p, h3{
+            padding: 0 0 0 100px;
+        }
+
+
+
+        /* Clear floats after image containers */
+        .row::after {
+          content: "";
+          clear: both;
+          display: inline;
+
+        }
+
+        .copyright p{
+            padding: 20px 0 0 100px;
+        }
+
+        .thumbnail img:onclick{
+            display = 'block';
+        }
+
+        .icon{
+                padding: 20px 0 0 100px;
+                cursor: pointer;
+        }
+
+
+        }
+
+        body #donation h1{
+            padding: 0 0 0 850px;
+        }
+
+        body #donation p{
+            padding: 0 0 50px 450px;
+            text-align: left;
+            width:50%;
+
+        }
+
+        body #donation_img{
+            text-align: center;
+            padding: 0 0 0 0;
+            weight: 150px;
+            height: 150px;
+
+        }
+
+        body #bank_details h1, p{
+            padding: 0 0 10px 550px;
+            width:50%;
+        }
+
+        body #bank_details{
+            padding: 250px 0 0 0;
+        }
+
+        li{
+            cursor: pointer;
+        }
+    </style>
+
+
+
+
+</body>
+
+
+
+
+<footer>
+    <div class="base">
+
+        <h3>
+            Follow Us
+        </h3>
+        <div class="icon">
+
+            <img src="{% static 'images/facebook.png' %}" width="40px" height="40px">
+
+
+            <img src="{% static 'images/logo_insta.png' %}" width="37px" height="37px">
+
+        </div>
+    </div>
+
+
+
+        <div class="follow">
+
+
+        </div>
+
+</footer>
+</body>
+</html>
